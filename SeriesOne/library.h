@@ -1,7 +1,7 @@
-#pragma once
+#ifndef __LIBTYPESET__
+#define __LIBTYPESET__
 
-#ifndef __LIB__
-#define __LIB__
+#pragma once
 
 typedef struct {
     int lines;
