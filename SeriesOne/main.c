@@ -15,6 +15,7 @@ int main() {
     printf("Received - l: %d, w: %d, c: %d\n", received_two->lines, received_two->words, received_two->chars);
 
     printf("Editing went right!\n");
+    printf("Or did it?");
 
     return 0;
 }
