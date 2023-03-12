@@ -16,7 +16,7 @@ Extended_array initialize_extended_array() {
 
 int execute_wc(Extended_array* exar, char* filename) {
     
-    char temp_filename[] = "tmp/temp_XXXXXX";
+    char temp_filename[] = "/tmp/temp_XXXXXX";
     int temp_file_no = mkstemp(temp_filename);
 
     if (temp_file_no == 0) {

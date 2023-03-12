@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall
+CFLAGS=-Wall 
 LIB=library
 
 all:
@@ -12,7 +12,7 @@ static_lib: library.c
 
 shared_lib: library.c
 				$(CC) $(CFLAGS) -c -fPIC library.c
-				$(CC) $(CFLAGS) -shared -fPIC -o libshared.so library.o
+				$(CC) -shared -o library.so library.o
 
 clean:
 		rm -f *.o *.a *.so 
