@@ -7,6 +7,7 @@ typedef struct {
     int lines;
     int words;
     int chars;
+  char *filepath;
 } Wc_result;
 
 typedef struct {
@@ -23,4 +24,3 @@ void free_array(Extended_array* exar);
 
 #endif
 
-//snprintf

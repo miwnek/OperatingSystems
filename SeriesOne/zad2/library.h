@@ -1,12 +1,11 @@
 #ifndef __LIBTYPESET__
 #define __LIBTYPESET__
 
-#pragma once
-
 typedef struct {
     int lines;
     int words;
     int chars;
+  char *filepath;
 } Wc_result;
 
 typedef struct {

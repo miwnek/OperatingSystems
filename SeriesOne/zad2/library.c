@@ -52,6 +52,8 @@ int execute_wc(Extended_array* exar, char* filename) {
     res->lines = l;
     res->words = w;
     res->chars = c;
+    res->filepath = malloc(sizeof(char) * (strlen(filename) + 1));
+    strcpy(res->filepath, filename);
 
     fclose(temp_file);
     free(buffer);

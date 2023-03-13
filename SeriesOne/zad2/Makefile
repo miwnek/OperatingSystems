@@ -3,21 +3,28 @@ CFLAGS=-Wall
 LIB=library
 
 all:
-				make static_lib
-				# make shared_lib
-				make static_runnable
+				make static
+				make shared
+				make repl_static
+				make repl_shared
+				make repl_dll
 
-static_lib: library.c
+static: library.c
 				$(CC) $(CFLAGS) -c library.c
 				ar cr library.a library.o
 
-shared_lib: library.c
+shared: library.c
 				$(CC) $(CFLAGS) -c -fPIC library.c
-				$(CC) -shared -o library.so library.o
+				$(CC) $(CFLAGS) -shared -o library.so library.o
 
-static_runnable:
-				$(CC) $(CFLAGS) -c repl.c
-				$(CC) -o repl repl.o -L. library.a
+repl_static: repl.c library.c dllhandle.h
+				$(CC) $(CFLAGS) -o repl_static repl.c -L. library.a
+
+repl_shared: repl.c library.c dllhandle.h
+				$(CC) $(CFLAGS) -L. -Wl,-rpath=. -o repl_shared repl.c library.so
+
+repl_dll: repl.c dllhandle.h library.c
+				$(CC) $(CFLAGS) -L. -Wl,-rpath=. -o repl_dll repl.c -ldl -D LIBTYPE_DLL
 
 clean:
-				rm *.o *.a repl
+				rm *.o *.a *so repl_shared repl_static repl_dll
