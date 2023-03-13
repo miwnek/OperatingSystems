@@ -15,7 +15,7 @@ typedef struct {
     int current_array_size;
 } Extended_array;
 
-Extended_array initialize_extended_array();
+Extended_array initialize_extended_array(int size);
 int execute_wc(Extended_array* exar, char* filename);
 Wc_result* get_block_on_index(Extended_array* exar, int index);
 void free_block_on_index(Extended_array* exar, int index);

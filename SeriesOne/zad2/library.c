@@ -3,20 +3,19 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_SIZE 1000
 #define BUFFER_SIZE 1024
 
-Extended_array initialize_extended_array() {
+Extended_array initialize_extended_array(int size) {
     Extended_array product;
-    product.max_array_size = MAX_SIZE;
+    product.max_array_size = size;
     product.current_array_size = 0;
-    product.pointer_array = calloc(MAX_SIZE, sizeof(Wc_result*));
+    product.pointer_array = calloc(size, sizeof(Wc_result*));
     return product;
 }
 
 int execute_wc(Extended_array* exar, char* filename) {
     
-    char temp_filename[] = "tmp/temp_XXXXXX";
+    char temp_filename[] = "/tmp/temp_XXXXXX";
     int temp_file_no = mkstemp(temp_filename);
 
     if (temp_file_no == 0) {
