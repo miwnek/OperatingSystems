@@ -1,0 +1,29 @@
+REPL interface started, available options: init number, count filename,
+show number, delete number, destroy, quit.
+repl> Real time: 92179 ns.
+User time: 0 ticks.
+Real time: 0 ticks.
+repl> Real time: 3301078 ns.
+User time: 0 ticks.
+Real time: 0 ticks.
+repl> Real time: 2635999 ns.
+User time: 0 ticks.
+Real time: 0 ticks.
+repl> lines: 98, words: 268, characters: 2735, path: library.c
+Real time: 28561 ns.
+User time: 0 ticks.
+Real time: 0 ticks.
+repl> lines: 174, words: 501, characters: 4754, path: repl.c
+Real time: 17472 ns.
+User time: 0 ticks.
+Real time: 0 ticks.
+repl> Real time: 24703 ns.
+User time: 0 ticks.
+Real time: 0 ticks.
+repl> Real time: 19567 ns.
+User time: 0 ticks.
+Real time: 0 ticks.
+repl> Real time: 28487 ns.
+User time: 0 ticks.
+Real time: 0 ticks.
+repl> 
