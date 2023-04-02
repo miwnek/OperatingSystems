@@ -6,4 +6,4 @@ So far it has the following:
 * cw02 - working with files and directories,
 * cw03 - working with processes,
 * cw04 - using signals,
-* cw05 - working with streams (not finished yet).
+* cw05 - working with streams.
