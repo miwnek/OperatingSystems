@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
     }
     char *string_waste;
 
-    long double rectangle_width = strtold(argv[1], &string_waste);
+    double rectangle_width = strtod(argv[1], &string_waste);
     int todo = atoi(argv[2]);
     int start = atoi(argv[3]);
 
@@ -25,8 +25,8 @@ int main(int argc, char *argv[]) {
         partial_sum += rectangle_width * function( ((long double)(start + i)) * rectangle_width );
     }
 
-    char buffer[20] = "";
-    int to_write = snprintf(buffer, 20, "%Lf$", partial_sum);
+    char buffer[1000] = "";
+    int to_write = snprintf(buffer, 1000, "%.15Lf$", partial_sum);
 
     FILE *stream = fopen(QUEUE_PATH, "a");
     setbuf(stream, NULL);
@@ -34,5 +34,5 @@ int main(int argc, char *argv[]) {
         perror("");
     }
     fclose(stream);
-    return 0;
+    exit(0);
 }

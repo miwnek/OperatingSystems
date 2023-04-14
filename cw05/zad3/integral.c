@@ -11,7 +11,7 @@
 
 #define QUEUE_PATH "/tmp/_queue_"
 
-long double rectangle_width;
+long double rectangle_width = 0.0;
 
 void fill_todo_list(int process_count, int *todo_list, int *start_list);
 
@@ -46,15 +46,15 @@ int main(int argc, char *argv[]) {
 
     mkfifo(QUEUE_PATH, 0666);
 
-    char buff1[20], buff2[20], buff3[20];
+    char buff1[20], buff2[20], buff3[5000];
     for(int i = 0; i < process_count; i++) {
         if(fork() != 0) {
             snprintf(buff1, 20, "%d", todo_list[i]);
             snprintf(buff2, 20, "%d", start_list[i]);
-            snprintf(buff3, 20, "%Lf", rectangle_width);
+            snprintf(buff3, 5000, "%0.19Lf", rectangle_width);
             execl("./subprocess", "subprocess", buff3, buff1, buff2, NULL);
         }
-        else wait(NULL);
+        else wait(0);
     }
 
     long double sum = 0.0;
